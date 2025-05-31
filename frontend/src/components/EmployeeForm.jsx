@@ -10,6 +10,8 @@ import { DatePicker } from '@mui/x-date-pickers';
 
 const EmployeeForm = () => {
     const { id } = useParams();
+    console.log('id',id);
+    
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
@@ -32,7 +34,6 @@ const EmployeeForm = () => {
                     const res = await axios.get(`/api/employees/${id}`, {
                         headers: { 'x-auth-token': token }
                     });
-                    console.log("Employee fetched:", res.data);
 
                     setFormData({
                         name: res.data.name || '',

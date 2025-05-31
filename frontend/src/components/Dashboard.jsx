@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [employees, setEmployees] = useState([]);
     const navigate = useNavigate();
     const isMobile = useMediaQuery('(max-width:600px)');
-
+    console.log(employees,'weeeeee');
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
@@ -64,7 +64,10 @@ const Dashboard = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
+                        
+                        
                         {employees.map((employee) => (
+                            
                             <TableRow key={employee._id}>
                                 <TableCell>{employee.name}</TableCell>
                                 {!isMobile && <TableCell>{employee.email}</TableCell>}
